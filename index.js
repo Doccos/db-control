@@ -32,3 +32,11 @@ module.exports.timestamp = function (name, defaultVal, isPrimaryKey,currentTS, o
 }
 
 
+//KEYS FOR RELATION
+
+module.exports.relationKeyRestrict = 'RESTRICT';
+module.exports.relationKeyCascade = 'CASCADE';
+module.exports.relationKeyNoAction = 'NO ACTION';
+module.exports.relationKeySetNull = 'SET NULL';
+
+

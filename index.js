@@ -11,13 +11,18 @@ module.exports.newTable = function (tableName) {
     return new table(tableName);
 }
 
-module.exports.varChar = function (name, length, isNullAllowed, defaultVal, isUnsigned) {
-    let r = new mainColumn("varchar", name, length, isNullAllowed, defaultVal, isUnsigned)
+module.exports.varChar = function (name, length, isNullAllowed, defaultVal) {
+    let r = new mainColumn("varchar", name, length, isNullAllowed, defaultVal, false)
     return r;
 }
 module.exports.int = function (name, length, isNullAllowed, defaultVal, isUnsigned,  isAutoIncrement) {
     let r = new mainColumn("int", name, length, isNullAllowed, defaultVal, isUnsigned);
     r.isAutoIncrement = isAutoIncrement
+    return r;
+}
+
+module.exports.decimal = function (name, length, isNullAllowed, defaultVal, isUnsigned) {
+    let r = new mainColumn("decimal", name, length, isNullAllowed, defaultVal, isUnsigned);
     return r;
 }
 

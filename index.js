@@ -20,6 +20,11 @@ module.exports.int = function (name, length, isNullAllowed, defaultVal, isUnsign
     r.isAutoIncrement = isAutoIncrement
     return r;
 }
+module.exports.tinyInt = function (name, length, isNullAllowed, defaultVal, isUnsigned,  isAutoIncrement) {
+    let r = new mainColumn("tinyint", name, length, isNullAllowed, defaultVal, isUnsigned);
+    r.isAutoIncrement = isAutoIncrement
+    return r;
+}
 
 module.exports.text = function(name, isNullAllowed){
     let r = new mainColumn("text", name, null, isNullAllowed, null, false)

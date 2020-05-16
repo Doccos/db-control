@@ -21,6 +21,11 @@ module.exports.int = function (name, length, isNullAllowed, defaultVal, isUnsign
     return r;
 }
 
+module.exports.text = function(name, isNullAllowed){
+    let r = new mainColumn("text", name, null, isNullAllowed, null, false)
+    return r;
+}
+
 module.exports.decimal = function (name, length, isNullAllowed, defaultVal, isUnsigned) {
     let r = new mainColumn("decimal", name, length, isNullAllowed, defaultVal, isUnsigned);
     return r;

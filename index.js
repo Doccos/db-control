@@ -36,21 +36,39 @@ module.exports.decimal = function (name, length, isNullAllowed, defaultVal, isUn
     return r;
 }
 
-module.exports.timestamp = function (name, defaultVal, currentTS, onUpdtCurrTS) {
-    let r = new mainColumn("timestamp", name, null, false, defaultVal, false);
+module.exports.timestamp = function (name, defaultVal, currentTS, onUpdtCurrTS, isNullAllowed) {
+    if(isNullAllowed === undefined)
+        isNullAllowed = false;
+
+    if(onUpdtCurrTS === true && currentTS === false)
+        onUpdtCurrTS = false
+
+    let r = new mainColumn("timestamp", name, null, isNullAllowed, defaultVal, false);
     r.currentTS = currentTS;
     r.onUpdCurTS = onUpdtCurrTS;
     return r;
 }
 
-module.exports.datetime = function (name, defaultVal, currentTS, onUpdtCurrTS) {
-    let r = new mainColumn("datetime", name, null, false, defaultVal, false);
+module.exports.datetime = function (name, defaultVal, currentTS, onUpdtCurrTS, isNullAllowed) {
+    if(isNullAllowed === undefined)
+        isNullAllowed = false;
+
+    if(onUpdtCurrTS === true && currentTS === false)
+        onUpdtCurrTS = false
+
+    let r = new mainColumn("datetime", name, null, isNullAllowed, defaultVal, false);
     r.currentTS = currentTS;
     r.onUpdCurTS = onUpdtCurrTS;
     return r;
 }
-module.exports.date = function (name, defaultVal, currentTS, onUpdtCurrTS) {
-    let r = new mainColumn("date", name, null, false, defaultVal, false);
+module.exports.date = function (name, defaultVal, currentTS, onUpdtCurrTS, isNullAllowed) {
+    if(isNullAllowed === undefined)
+        isNullAllowed = false;
+
+    if(onUpdtCurrTS === true && currentTS === false)
+        onUpdtCurrTS = false
+
+    let r = new mainColumn("date", name, null, isNullAllowed, defaultVal, false);
     r.currentTS = currentTS;
     r.onUpdCurTS = onUpdtCurrTS;
     return r;

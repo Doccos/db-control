@@ -43,6 +43,9 @@ module.exports.timestamp = function (name, defaultVal, currentTS, onUpdtCurrTS, 
     if(onUpdtCurrTS === true && currentTS === false)
         onUpdtCurrTS = false
 
+    if(currentTS === true)
+        defaultVal = null;
+    
     let r = new mainColumn("timestamp", name, null, isNullAllowed, defaultVal, false);
     r.currentTS = currentTS;
     r.onUpdCurTS = onUpdtCurrTS;
@@ -55,7 +58,8 @@ module.exports.datetime = function (name, defaultVal, currentTS, onUpdtCurrTS, i
 
     if(onUpdtCurrTS === true && currentTS === false)
         onUpdtCurrTS = false
-
+    if(currentTS === true)
+        defaultVal = null;
     let r = new mainColumn("datetime", name, null, isNullAllowed, defaultVal, false);
     r.currentTS = currentTS;
     r.onUpdCurTS = onUpdtCurrTS;
@@ -67,6 +71,8 @@ module.exports.date = function (name, defaultVal, currentTS, onUpdtCurrTS, isNul
 
     if(onUpdtCurrTS === true && currentTS === false)
         onUpdtCurrTS = false
+    if(currentTS === true)
+        defaultVal = null;
 
     let r = new mainColumn("date", name, null, isNullAllowed, defaultVal, false);
     r.currentTS = currentTS;

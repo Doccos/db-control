@@ -1,6 +1,6 @@
 {
   "name": "db-control",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Creates automatically mysql Tables with node.js and mysql2",
   "main": "index.js",
   "directories": {
